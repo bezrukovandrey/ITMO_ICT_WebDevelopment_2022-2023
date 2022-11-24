@@ -13,7 +13,7 @@
     
     
       
-        <title>task4 - Web Dev by me</title>
+        <title>task2 - Web Dev by me</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-4" class="md-skip">
+        <a href="#312" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              task4
+              task2
             
           </span>
         </div>
@@ -207,14 +207,14 @@
       
       
         <label class="md-nav__link" for="__nav_2">
-          Лаб 1
+          Практическая 3.1
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Лаб 1" data-md-level="1">
+      <nav class="md-nav" aria-label="Практическая 3.1" data-md-level="1">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Лаб 1
+          Практическая 3.1
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -224,36 +224,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../task1/" class="md-nav__link">
+      <a href="../3.1.1/" class="md-nav__link">
         task1
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../task2/" class="md-nav__link">
-        task2
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../task3/" class="md-nav__link">
-        task3
       </a>
     </li>
   
@@ -276,12 +248,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          task4
+          task2
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        task4
+        task2
       </a>
       
         
@@ -300,8 +272,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#socket-threading-tcp" class="md-nav__link">
-    Реализовать двухпользовательский или многопользовательский чат. Реализация многопользовательского чата позволяет получить максимальное количество баллов. Обязательно использовать библиотеку socket. Обязательно использовать библиотеку threading. Реализовать с помощью протокола TCP.
+  <a href="#1" class="md-nav__link">
+    По созданным в пр.1 данным написать следующие запросы на фильтрацию:
   </a>
   
 </li>
@@ -321,8 +293,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../task5/" class="md-nav__link">
-        task5
+      <a href="../3.1.3/" class="md-nav__link">
+        task3
       </a>
     </li>
   
@@ -362,8 +334,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#socket-threading-tcp" class="md-nav__link">
-    Реализовать двухпользовательский или многопользовательский чат. Реализация многопользовательского чата позволяет получить максимальное количество баллов. Обязательно использовать библиотеку socket. Обязательно использовать библиотеку threading. Реализовать с помощью протокола TCP.
+  <a href="#1" class="md-nav__link">
+    По созданным в пр.1 данным написать следующие запросы на фильтрацию:
   </a>
   
 </li>
@@ -383,186 +355,18 @@
                   
 
 
-<h1 id="task-4">Task 4</h1>
-<h4 id="socket-threading-tcp">Реализовать двухпользовательский или многопользовательский чат. Реализация многопользовательского чата позволяет получить максимальное количество баллов. Обязательно использовать библиотеку socket. Обязательно использовать библиотеку threading. Реализовать с помощью протокола TCP.</h4>
-<p>client.py - клиентская часть</p>
-<pre><code class="language-python">import socket
-import threading
-
-
-nickname = input(&quot;Choose your nickname: &quot;)
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('127.0.0.1', 9555))
-
-
-def receive():
-    while True:
-        try:
-            message = client.recv(1024).decode('utf-8')
-            if message == 'NICK':
-                client.send(nickname.encode('utf-8'))
-            else:
-                print(message)
-        except:
-            print(&quot;An error occured!&quot;)
-            client.close()
-            break
-
-def write():
-    while True:
-        message = '{}: {}'.format(nickname, input(''))
-        client.send(message.encode('utf-8'))
-
-receive_thread = threading.Thread(target=receive)
-receive_thread.start()
-
-write_thread = threading.Thread(target=write)
-write_thread.start()
-</code></pre>
-<p>Выбираем никнейм и подключаемся к серверу</p>
-<pre><code class="language-python">nickname = input(&quot;Choose your nickname: &quot;)
-
-
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(('127.0.0.1', 9555))
-</code></pre>
-<p>Прислушиваемся к серверу и получаем сообщение от него, если оно 'NICK', то отправляем никнейм, иначе печатаем сообщение (закрываем сооединение, если возникает ошибка)</p>
-<pre><code class="language-python">def receive():
-    while True:
-        try:
-            message = client.recv(1024).decode('utf-8')
-            if message == 'NICK':
-                client.send(nickname.encode('utf-8'))
-            else:
-                print(message)
-        except:
-            print(&quot;An error occured!&quot;)
-            client.close()
-            break
-</code></pre>
-<p>Отправляем сообщения на сервер:</p>
-<pre><code class="language-python">def write():
-    while True:
-        message = '{}: {}'.format(nickname, input(''))
-        client.send(message.encode('utf-8'))
-</code></pre>
-<p>Начинаем два потока на прослушивание и записывание</p>
-<pre><code class="language-python">receive_thread = threading.Thread(target=receive)
-receive_thread.start()
-
-write_thread = threading.Thread(target=write)
-write_thread.start()
-</code></pre>
-<p>server.py - серверная часть</p>
-<pre><code class="language-python">import socket
-import threading
-
-
-
-server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('localhost', 9555))
-server.listen()
-
-
-clients = []
-nicknames = []
-
-
-def broadcast(message):
-    for client in clients:
-        client.send(message)
-
-
-def handle(client):
-    while True:
-        try:
-
-            message = client.recv(1024)
-            broadcast(message)
-        except:
-
-            index = clients.index(client)
-            clients.remove(client)
-            client.close()
-            nickname = nicknames[index]
-            broadcast('{} left!'.format(nickname).encode('utf-8'))
-            nicknames.remove(nickname)
-            break
-
-
-def receive():
-    while True:
-
-        client, address = server.accept()
-        print(&quot;Connected with {}&quot;.format(str(address)))
-
-
-        client.send('NICK'.encode('utf-8'))
-        nickname = client.recv(1024).decode('utf-8')
-        nicknames.append(nickname)
-        clients.append(client)
-
-
-        print(&quot;Nickname is {}&quot;.format(nickname))
-        broadcast(&quot;{} joined!&quot;.format(nickname).encode('utf-8'))
-        client.send('Connected to server!'.encode('utf-8'))
-
-
-        thread = threading.Thread(target=handle, args=(client,))
-        thread.start()
-
-receive()
-
-</code></pre>
-<p>Запускаем сервер и создаем два массива с клиентами и никнеймами</p>
-<pre><code class="language-python">server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('localhost', 9555))
-server.listen()
-
-clients = []
-nicknames = []
-</code></pre>
-<p>Отправляем сообщения всем подключенным клиентам</p>
-<pre><code class="language-python">def broadcast(message):
-    for client in clients:
-        client.send(message)
-</code></pre>
-<p>Обработка сообщений - полученные сообщения от клиента отправляются всем клиентам, в случае возникновения ошибки клиент и его никнейм удаляются, выводится соответствующее сообщение.</p>
-<pre><code class="language-python">def handle(client):
-    while True:
-        try:
-            message = client.recv(1024)
-            broadcast(message)
-        except:
-            index = clients.index(client)
-            clients.remove(client)
-            client.close()
-            nickname = nicknames[index]
-            broadcast('{} left!'.format(nickname).encode('utf-8'))
-            nicknames.remove(nickname)
-            break
-</code></pre>
-<p>Принимающая и прослушивающая функция - устанавливаем соединение, выводим о нем сообщение, отправляем 'NICK' клиенту, получаем от него никнейм, добавляем клиента в два массива, печатаем и выводим никнейм, начинаем обрабатывать поток  для клиента.</p>
-<pre><code class="language-python">def receive():
-    while True:
-        client, address = server.accept()
-        print(&quot;Connected with {}&quot;.format(str(address)))
-
-        client.send('NICK'.encode('utf-8'))
-        nickname = client.recv(1024).decode('utf-8')
-        nicknames.append(nickname)
-        clients.append(client)
-
-        print(&quot;Nickname is {}&quot;.format(nickname))
-        broadcast(&quot;{} joined!&quot;.format(nickname).encode('utf-8'))
-        client.send('Connected to server!'.encode('utf-8'))
-
-        thread = threading.Thread(target=handle, args=(client,))
-        thread.start()
-
-receive()
-</code></pre>
+<h1 id="312">Задание 3.1.2:</h1>
+<h4 id="1">По созданным в пр.1 данным написать следующие запросы на фильтрацию:</h4>
+<p>•  Выведете все машины марки “Toyota” (или любой другой марки, которая у вас есть): BMW</p>
+<p><img alt="Screenshot" src="../img/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA8.png" /></p>
+<p>•   Найти всех водителей с именем “Олег” (или любым другим именем на ваше усмотрение): Ivan</p>
+<p><img alt="Screenshot" src="../img/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA9.png" /></p>
+<p>•   Взяв любого случайного владельца получить его id, и по этому id получить экземпляр удостоверения в виде объекта модели (можно в 2 запроса): id у 4го владельца</p>
+<p><img alt="Screenshot" src="../img/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA10.png" /></p>
+<p>•   Вывести всех владельцев красных машин (или любого другого цвета, который у вас присутствует): black</p>
+<p><img alt="Screenshot" src="../img/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA11.png" /></p>
+<p>•   Найти всех владельцев, чей год владения машиной начинается с 2010 (или любой другой год, который присутствует у вас в базе) c 2013</p>
+<p><img alt="Screenshot" src="../img/%D0%A0%D0%B8%D1%81%D1%83%D0%BD%D0%BE%D0%BA12.png" /></p>
 
 
 
@@ -583,7 +387,7 @@ receive()
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../task3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: task3" rel="prev">
+        <a href="../3.1.1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: task1" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -592,20 +396,20 @@ receive()
               <span class="md-footer__direction">
                 Previous
               </span>
-              task3
+              task1
             </div>
           </div>
         </a>
       
       
         
-        <a href="../task5/" class="md-footer__link md-footer__link--next" aria-label="Next: task5" rel="next">
+        <a href="../3.1.3/" class="md-footer__link md-footer__link--next" aria-label="Next: task3" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              task5
+              task3
             </div>
           </div>
           <div class="md-footer__button md-icon">
