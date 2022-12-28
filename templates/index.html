@@ -13,7 +13,7 @@
     
     
       
-        <title>task3 - Web Dev by me</title>
+        <title>templates - шаблоны - Web Dev by me</title>
       
     
     
@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#task-3" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              task3
+              templates - шаблоны
             
           </span>
         </div>
@@ -194,14 +189,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -250,52 +243,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          task3
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../task3/" class="md-nav__link">
         task3
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#http-html-indexhtml-socket" class="md-nav__link">
-    Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -341,12 +293,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -423,11 +377,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../templates/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         templates - шаблоны
       </a>
+      
     </li>
   
 
@@ -532,23 +494,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#http-html-indexhtml-socket" class="md-nav__link">
-    Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -563,42 +508,161 @@
                   
 
 
-<h1 id="task-3">Task 3</h1>
-<h4 id="http-html-indexhtml-socket">Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.</h4>
-<p>server.py - серверная часть</p>
-<p>Создаем сокет <code>conn</code> и подключаемся к серверу, с помощью <code>listen</code> запускаем режим прослушивания, получаем данные, читаем файл <code>index.html</code>, получаем и отправляем результат в виде типа ответа от сервера, хедеров и тела страницы, закрываем сокет и соединение при прерывании программы.</p>
-<pre><code class="language-python">import socket
+  <h1>templates - шаблоны</h1>
 
-conn = socket.socket()
-conn.bind(('localhost', 10801))
-conn.listen(10)
-
-while True:
-    try:
-        client_socket, addr = conn.accept()
-        client_socket.recv(1024)
-        response_type = &quot;HTTP/1.0 200 OK\n&quot;
-        headers = &quot;Content-Type: text/html\n\n&quot;
-        with open(&quot;task3/index.html&quot;, &quot;r&quot;) as f:
-            body = f.read()
-        res = response_type + headers + body
-        client_socket.send(res.encode())
-        client_socket.close()
-    except KeyboardInterrupt:
-        conn.close()
-        break
-</code></pre>
-<p>index.html - html-страница</p>
+<p>index.html</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Link!&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+&lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;/&gt;
+    &lt;title&gt;conferences&lt;/title&gt;
+    &lt;style&gt;
+   .layer {
+    border: 2px solid black;
+    padding: 20px;
+   }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;layer&quot;&gt;
+&lt;h2&gt;main&lt;/h2&gt;
+&lt;a href=&quot;{% url 'conferences' %}&quot;&gt;conferences&lt;/a&gt;
+&lt;br/&gt;
+{% if user.is_active %}
+&lt;a href=&quot;{% url 'account_logout' %}&quot;&gt;sign out&lt;/a&gt;
+{% else %}
+&lt;a href=&quot;{% url 'account_login' %}&quot;&gt;sign in&lt;/a&gt;
+{% endif %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>conferences.html </p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;title&gt;conferences&lt;/title&gt;
+    &lt;style&gt;
+   .layer {
+    border: 2px solid black;
+    padding: 20px;
+   }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;layer&quot;&gt;
+&lt;h2&gt;conferences&lt;/h2&gt;
+&lt;a href=&quot;{% url 'index' %}&quot;&gt;main&lt;/a&gt;
+&lt;br/&gt;
+{% if user.is_active %}
+&lt;a href=&quot;{% url 'account_logout' %}&quot;&gt;sign out&lt;/a&gt;
+{% else %}
+&lt;a href=&quot;{% url 'account_login' %}&quot;&gt;sign in&lt;/a&gt;
+{% endif %}
+{% if conferences %}
+{% for conference in conferences %}
+&lt;p&gt;
+    {{ conference }}
+    &lt;br/&gt;
+    &lt;a href=&quot;/conferences/{{ conference.id }}&quot;&gt;detail&lt;/a&gt;
+    {% endfor %}
+&lt;/p&gt;
+{% else %}
+&lt;p&gt;no conferences yet&lt;/p&gt;
+{% endif %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>conference-detail.html </p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;title&gt;{{ conference }}&lt;/title&gt;
+    &lt;style&gt;
+   .layer {
+    border: 2px solid black;
+    padding: 20px;
+   }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;layer&quot;&gt;
+&lt;a href=&quot;/&quot;&gt;main&lt;/a&gt;
+&lt;br/&gt;
+&lt;a href=&quot;/conferences/{{ conferences }}&quot;&gt;conferences&lt;/a&gt;
+&lt;br/&gt;
+{% if user.is_active %}
+&lt;a href=&quot;{% url 'account_logout' %}&quot;&gt;sign out&lt;/a&gt;
+{% else %}
+&lt;a href=&quot;{% url 'account_login' %}&quot;&gt;sign in&lt;/a&gt;
+{% endif %}
+&lt;h2&gt;conference info&lt;/h2&gt;
+&lt;h3&gt;{{ conference }}&lt;/h3&gt;
+&lt;p&gt;
+    &lt;b&gt;topic:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.topic }}
+&lt;/p&gt;
 
-    &lt;a href=&quot;https://github.com&quot;&gt;Visit Github!&lt;/a&gt;
+&lt;p&gt;
+    &lt;b&gt;speaker:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.speaker }}
+&lt;/p&gt;
 
-    &lt;/body&gt;
+&lt;p&gt;
+    &lt;b&gt;location:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.location }}
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;start date:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.start_date }}
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;end date:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.end_date }}
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;conference description:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.description }}
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;location description:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.location_description }}
+&lt;/p&gt;
+
+&lt;p&gt;
+    &lt;b&gt;terms of participation:&lt;/b&gt;
+    &lt;br/&gt;
+    {{ conference.terms }}
+&lt;/p&gt;
+
+&lt;h1&gt;comments&lt;/h1&gt;
+
+{% for comment in comments %}
+&lt;p&gt;{{ comment.text }}&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;&lt;b&gt;comment author: {{ comment.author }}&lt;/b&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;&lt;b&gt;rating: {{ comment.rating }}&lt;/b&gt;&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;&lt;b&gt;conference dates: {{ conference.start_date }}-{{ conference.end_date }}&lt;/b&gt;&lt;/small&gt;&lt;/p&gt;
+{% endfor %} {% if user.is_authenticated %}
+&lt;div&gt;
+    &lt;h1&gt;add comment:&lt;/h1&gt;
+    &lt;form action=&quot;/conferences/{{conference.id}}/&quot; method=&quot;post&quot;&gt;
+        {% csrf_token %} {{ form.as_p }}
+        &lt;input type=&quot;submit&quot; value=&quot;add comment&quot;/&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+{% else %} sign in to add comment
+&lt;a href=&quot;{% url 'account_login' %}&quot;&gt;sign in&lt;/a&gt;
+{% endif %}
+&lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 
@@ -621,7 +685,7 @@ while True:
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../task2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: task2" rel="prev">
+        <a href="../routers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: routers.py - роутеры" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -630,20 +694,20 @@ while True:
               <span class="md-footer__direction">
                 Previous
               </span>
-              task2
+              routers.py - роутеры
             </div>
           </div>
         </a>
       
       
         
-        <a href="../task4/" class="md-footer__link md-footer__link--next" aria-label="Next: task4" rel="next">
+        <a href="../3.1.1/" class="md-footer__link md-footer__link--next" aria-label="Next: task1" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              task4
+              task1
             </div>
           </div>
           <div class="md-footer__button md-icon">

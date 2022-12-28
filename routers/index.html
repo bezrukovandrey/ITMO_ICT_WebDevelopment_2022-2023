@@ -13,7 +13,7 @@
     
     
       
-        <title>task3 - Web Dev by me</title>
+        <title>routers.py - роутеры - Web Dev by me</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task-3" class="md-skip">
+        <a href="#conf_app" class="md-skip">
           Skip to content
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              task3
+              routers.py - роутеры
             
           </span>
         </div>
@@ -194,14 +194,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -250,52 +248,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          task3
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../task3/" class="md-nav__link">
         task3
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#http-html-indexhtml-socket" class="md-nav__link">
-    Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -341,12 +298,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -409,11 +368,97 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../routers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          routers.py - роутеры
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         routers.py - роутеры
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conf_app" class="md-nav__link">
+    В приложении conf_app:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    • путь по умолчанию index,
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences" class="md-nav__link">
+    • путь conferences/, открывающий страницу со всеми конференциями
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences-conferences2" class="md-nav__link">
+    • путь conferences//, открывающий детальное описание конкертной конференции (напр. conferences/2 – вторая конференция)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences_lab" class="md-nav__link">
+    В проекте conferences_lab:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-" class="md-nav__link">
+    • путь admin/, открывающий админ-панель
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    • путь accounts/, открывающий страницы логина, регистрации, выхода из аккаунта, установки пароля и т.д.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conf_app_1" class="md-nav__link">
+    • включение путей из приложения conf_app
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -532,8 +577,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -542,8 +585,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#http-html-indexhtml-socket" class="md-nav__link">
-    Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.
+  <a href="#conf_app" class="md-nav__link">
+    В приложении conf_app:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" class="md-nav__link">
+    • путь по умолчанию index,
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences" class="md-nav__link">
+    • путь conferences/, открывающий страницу со всеми конференциями
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences-conferences2" class="md-nav__link">
+    • путь conferences//, открывающий детальное описание конкертной конференции (напр. conferences/2 – вторая конференция)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conferences_lab" class="md-nav__link">
+    В проекте conferences_lab:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-" class="md-nav__link">
+    • путь admin/, открывающий админ-панель
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accounts" class="md-nav__link">
+    • путь accounts/, открывающий страницы логина, регистрации, выхода из аккаунта, установки пароля и т.д.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conf_app_1" class="md-nav__link">
+    • включение путей из приложения conf_app
   </a>
   
 </li>
@@ -563,43 +655,38 @@
                   
 
 
-<h1 id="task-3">Task 3</h1>
-<h4 id="http-html-indexhtml-socket">Реализовать серверную часть приложения. Клиент подключается к серверу. В ответ клиент получает http-сообщение, содержащее html-страницу, которую сервер подгружает из файла index.html. Обязательно использовать библиотеку socket.</h4>
-<p>server.py - серверная часть</p>
-<p>Создаем сокет <code>conn</code> и подключаемся к серверу, с помощью <code>listen</code> запускаем режим прослушивания, получаем данные, читаем файл <code>index.html</code>, получаем и отправляем результат в виде типа ответа от сервера, хедеров и тела страницы, закрываем сокет и соединение при прерывании программы.</p>
-<pre><code class="language-python">import socket
+  <h1>routers.py - роутеры</h1>
 
-conn = socket.socket()
-conn.bind(('localhost', 10801))
-conn.listen(10)
+<h4 id="conf_app">В приложении conf_app:</h4>
+<h4 id="index">• путь по умолчанию index,</h4>
+<h4 id="conferences">• путь conferences/, открывающий страницу со всеми конференциями</h4>
+<h4 id="conferences-conferences2">• путь conferences/<slug:pk>/, открывающий детальное описание конкертной конференции (напр. conferences/2 – вторая конференция)</h4>
+<pre><code class="language-python">from django.urls import path
 
-while True:
-    try:
-        client_socket, addr = conn.accept()
-        client_socket.recv(1024)
-        response_type = &quot;HTTP/1.0 200 OK\n&quot;
-        headers = &quot;Content-Type: text/html\n\n&quot;
-        with open(&quot;task3/index.html&quot;, &quot;r&quot;) as f:
-            body = f.read()
-        res = response_type + headers + body
-        client_socket.send(res.encode())
-        client_socket.close()
-    except KeyboardInterrupt:
-        conn.close()
-        break
+from .views import index, ConferenceView, ConferenceDetailView
+
+urlpatterns = [
+    path(&quot;&quot;, index, name=&quot;index&quot;),
+    path(&quot;conferences/&quot;, ConferenceView.as_view(), name=&quot;conferences&quot;),
+    path(
+        &quot;conferences/&lt;slug:pk&gt;/&quot;,
+        ConferenceDetailView.as_view(),
+        name=&quot;conference-detail&quot;,
+    ),
+]
 </code></pre>
-<p>index.html - html-страница</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;Link!&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+<h4 id="conferences_lab">В проекте conferences_lab:</h4>
+<h4 id="admin-">• путь admin/, открывающий админ-панель</h4>
+<h4 id="accounts">• путь accounts/, открывающий страницы логина, регистрации, выхода из аккаунта, установки пароля и т.д.</h4>
+<h4 id="conf_app_1">• включение путей из приложения conf_app</h4>
+<pre><code class="language-python">from django.contrib import admin
+from django.urls import path, include
 
-    &lt;a href=&quot;https://github.com&quot;&gt;Visit Github!&lt;/a&gt;
-
-    &lt;/body&gt;
-&lt;/html&gt;
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path(&quot;accounts/&quot;, include(&quot;allauth.urls&quot;)),
+    path(&quot;&quot;, include(&quot;conf_app.urls&quot;))
+]
 </code></pre>
 
 
@@ -621,7 +708,7 @@ while True:
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../task2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: task2" rel="prev">
+        <a href="../forms/" class="md-footer__link md-footer__link--prev" aria-label="Previous: forms.py - формы" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -630,20 +717,20 @@ while True:
               <span class="md-footer__direction">
                 Previous
               </span>
-              task2
+              forms.py - формы
             </div>
           </div>
         </a>
       
       
         
-        <a href="../task4/" class="md-footer__link md-footer__link--next" aria-label="Next: task4" rel="next">
+        <a href="../templates/" class="md-footer__link md-footer__link--next" aria-label="Next: templates - шаблоны" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              task4
+              templates - шаблоны
             </div>
           </div>
           <div class="md-footer__button md-icon">
