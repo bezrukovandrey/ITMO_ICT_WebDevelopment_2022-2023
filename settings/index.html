@@ -684,6 +684,13 @@
 
 CORS_ORIGIN_ALLOW_ALL = True
 </code></pre>
+<p>Разрешаем авторизацию по токенам</p>
+<pre><code class="language-python">REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
+</code></pre>
 
 
 
