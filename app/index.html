@@ -13,7 +13,7 @@
     
     
       
-        <title>views.py - представления - Web Dev by me</title>
+        <title>App.vue - основная компонента - Web Dev by me</title>
       
     
     
@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -95,7 +90,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              views.py - представления
+              App.vue - основная компонента
             
           </span>
         </div>
@@ -298,14 +293,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -340,88 +333,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          views.py - представления
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
         views.py - представления
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    На основе функций
-  </a>
-  
-    <nav class="md-nav" aria-label="На основе функций">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
-    Функция index для показа домашней страницы
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    На основе классов
-  </a>
-  
-    <nav class="md-nav" aria-label="На основе классов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conferences-conferenceshtml" class="md-nav__link">
-    Класс Представление конференции: используется модель конференций, имя conferences, имя шаблона conferences.html
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conference-detailhtml-postcommet-formspy-get_context_data-post" class="md-nav__link">
-    Класс Детальное представление конференции: используется модель конференций, имя шаблона conference-detail.html, класс PostCommet импортируется из forms.py; два метода get_context_data, post (получение и отправка данных).
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -661,12 +577,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
       
@@ -715,11 +633,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../app/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         App.vue - основная компонента
       </a>
+      
     </li>
   
 
@@ -777,61 +703,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    На основе функций
-  </a>
-  
-    <nav class="md-nav" aria-label="На основе функций">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#index" class="md-nav__link">
-    Функция index для показа домашней страницы
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    На основе классов
-  </a>
-  
-    <nav class="md-nav" aria-label="На основе классов">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#conferences-conferenceshtml" class="md-nav__link">
-    Класс Представление конференции: используется модель конференций, имя conferences, имя шаблона conferences.html
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#conference-detailhtml-postcommet-formspy-get_context_data-post" class="md-nav__link">
-    Класс Детальное представление конференции: используется модель конференций, имя шаблона conference-detail.html, класс PostCommet импортируется из forms.py; два метода get_context_data, post (получение и отправка данных).
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -845,43 +716,54 @@
                   
 
 
-  <h1>views.py - представления</h1>
+  <h1>App.vue - основная компонента</h1>
 
-<h3 id="_1">На основе функций</h3>
-<h4 id="index">Функция index для показа домашней страницы</h4>
-<pre><code class="language-python">def index(request):
-    return render(request, &quot;index.html&quot;)
-</code></pre>
-<h3 id="_2">На основе классов</h3>
-<h4 id="conferences-conferenceshtml">Класс Представление конференции: используется модель конференций, имя conferences, имя шаблона conferences.html</h4>
-<pre><code class="language-python">class ConferenceView(generic.ListView):
-    model = Conference
-    context_object_name = &quot;conferences&quot;
-    queryset = Conference.objects.all()
-    template_name = &quot;conferences.html&quot;
-</code></pre>
-<h4 id="conference-detailhtml-postcommet-formspy-get_context_data-post">Класс Детальное представление конференции: используется модель конференций, имя шаблона conference-detail.html, класс PostCommet импортируется из forms.py; два метода get_context_data, post (получение и отправка данных).</h4>
-<pre><code class="language-python">class ConferenceDetailView(FormMixin, generic.DetailView):
-    model = Conference
-    template_name = &quot;conference-detail.html&quot;
-    form_class = PostComment
+<p>App.vue</p>
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;v-app&gt;
+    &lt;v-app-bar app color=&quot;teal&quot; dark&gt;
+      &lt;div class=&quot;d-flex align-center&quot;&gt;
+        &lt;h1 class=&quot;headline&quot;&gt;My hotel&lt;/h1&gt;
+      &lt;/div&gt;
+      &lt;v-toolbar-items class=&quot;hidden-sm-and-down&quot;&gt;
+        &lt;v-btn color=&quot;white&quot; plain @click=&quot;logout&quot;&gt;
+          Logout
+        &lt;/v-btn&gt;
+        &lt;v-btn color=&quot;white&quot; plain @click=&quot;rooms&quot;&gt;
+          Rooms
+        &lt;/v-btn&gt;
+        &lt;v-btn color=&quot;white&quot; plain @click=&quot;guests&quot;&gt;
+          Guests
+        &lt;/v-btn&gt;
+      &lt;/v-toolbar-items&gt;
+    &lt;/v-app-bar&gt;
 
-    def get_context_data(self, **kwargs):
-        context = super(ConferenceDetailView, self).get_context_data(**kwargs)
-        context[&quot;form&quot;] = PostComment(
-            initial={&quot;name&quot;: self.object, &quot;author&quot;: self.request.user}
-        )
-        context[&quot;comments&quot;] = Comment.objects.filter(name=self.get_object()).all()
-        return context
+    &lt;router-view /&gt;
+  &lt;/v-app&gt;
+&lt;/template&gt;
 
-    def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        form = self.get_form()
-        if form.is_valid():
-            form.save()
-        return HttpResponseRedirect(
-            reverse(&quot;conference-detail&quot;, args=(self.object.pk,))
-        )
+&lt;script&gt;
+export default {
+  name: &quot;App&quot;,
+
+  data: () =&gt; ({
+    //
+  }),
+
+  methods: {
+    logout() {
+      localStorage.removeItem(&quot;auth_token&quot;);
+      this.$router.push({ name: &quot;Login&quot; });
+    },
+    guests() {
+      this.$router.push({ name: &quot;Guests&quot; });
+    },
+    rooms() {
+      this.$router.push({ name: &quot;Rooms&quot; });
+    },
+  },
+};
+&lt;/script&gt;
 </code></pre>
 
 
@@ -903,7 +785,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: models.py - модель данных" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: index.js - роутинг" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -912,20 +794,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              models.py - модель данных
+              index.js - роутинг
             </div>
           </div>
         </a>
       
       
         
-        <a href="../forms/" class="md-footer__link md-footer__link--next" aria-label="Next: forms.py - формы" rel="next">
+        <a href="../components/" class="md-footer__link md-footer__link--next" aria-label="Next: Components" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              forms.py - формы
+              Components
             </div>
           </div>
           <div class="md-footer__button md-icon">
